@@ -16,8 +16,11 @@ public class BlablalandServer extends Thread{
     public void run() {
         super.run();
         while(true) {
+            System.out.println("Blablaland server waiting...");
             try {
                 Socket s = server.accept();
+                System.out.println("New connexion");
+                new BlablalandConnexionHandler(s).start();
             } catch (IOException e) {
                 e.printStackTrace();
             }

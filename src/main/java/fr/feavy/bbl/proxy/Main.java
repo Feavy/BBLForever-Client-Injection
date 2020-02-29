@@ -20,7 +20,15 @@ public class Main {
         client.doPOST("login.php", "login=bilal12&password=bilal13");
 
         client.saveFile("chat.php");
-        client.saveFile("chat/chat.swf");
+        client.saveFile("chat/chat.swf?CACHE_VERSION=104");
+        /*client.saveFile("scripts/chat/usersStats.php");
+        client.saveFile("scripts/chat/keepAlive.php");
+        client.saveFile("scripts/chat/dailyMessage.php");
+        client.saveFile("scripts/chat/contactManager.php");
+        client.saveFile("scripts/chat/getBBL.php");*/
+
+        client.saveFile("data/fx/0/fx.swf?cacheVersion=10");
+        client.saveFile("data/external.swf?cacheVersion=104");
 
         InetAddress inetAddress = InetAddress.getLocalHost();
         String localIP = inetAddress.getHostAddress();
@@ -38,6 +46,9 @@ public class Main {
         //HttpServer server = HttpServer.create(addr, 0);
         //server.setHttpsConfigurator(new Configurator(ctx));
 
+        new BlablalandServer().start();
+        System.out.println("Blablaland Server started");
+
         HttpServer httpServer = HttpServer.create(new InetSocketAddress(80), 0);
         HttpContext context = httpServer.createContext("/");
         context.setHandler(Main::handleRequest);
@@ -49,6 +60,7 @@ public class Main {
     private static void handleRequest(HttpExchange exchange) throws IOException {
         try {
         String path = exchange.getRequestURI().toString();
+        System.out.println("Request: "+path);
         if(path.contains("?"))
             path = path.split("\\?")[0];
         byte[] data = getFileBytes("content" + path);

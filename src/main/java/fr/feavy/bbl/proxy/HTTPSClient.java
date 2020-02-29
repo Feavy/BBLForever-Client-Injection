@@ -3,7 +3,6 @@ package fr.feavy.bbl.proxy;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
 import java.net.*;
-import java.nio.ByteBuffer;
 
 public class HTTPSClient {
     private final String base;
@@ -55,7 +54,8 @@ public class HTTPSClient {
     }
 
     public File saveFile(String path) throws IOException {
-        File file = new File(savedFilesPath+path);
+        String filePath = path.split("\\?")[0];
+        File file = new File(savedFilesPath+filePath);
         file.getParentFile().mkdirs();
         HttpsURLConnection connection = newConnection(path);
         byte[] data = readInputStream(connection.getInputStream());
