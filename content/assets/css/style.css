@@ -1,0 +1,296 @@
+﻿* { 
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+
+img {
+    image-rendering: -webkit-optimize-contrast;
+}
+
+@font-face {
+    font-family: Blablahawk;
+    src: url(/assets/fonts/Blablahawk.ttf);
+}
+@font-face {
+    font-family: "Arial Black";
+    src: url(/assets/fonts/ariblk.ttf);
+}
+body {
+    min-width: 1068px;
+    
+    margin: 0;
+    background-color: #65C3FF;
+    background-image: url("/assets/img/fond_site_smiley.png");
+    
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+#background {
+    background-image: url("/assets/img/bg_hiver.png");
+    background-repeat: no-repeat;
+    background-position: center -10px;
+    z-index: -999;
+    width: 100%;
+    min-width: 1000px;
+}
+div#container {
+    min-height: 600px;
+    width: 1050px;
+    margin: auto;
+    overflow: auto; 
+}
+div.cadresGauche {
+    width: 665px;
+    margin-top: 6px;
+    display: inline-block;
+}
+div.cadresCentral {
+    width: 950px;
+    margin-top: 6px;
+    display: inline-block;
+}
+div.cadresDroit {
+    width: 275px;
+    float: right;
+    margin-top: 6px;
+}
+div#page {
+    margin: auto;
+    width: 950px;
+}
+div#navigation {
+    background-color: #f50085;
+    width: 1000px;
+    height: 40px;
+    /*border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;*/
+    border-radius: 10px;
+    text-shadow: 0px 0px 10px rgba(0,0,0,.5);
+    
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    border-collapse: collapse;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, .5);
+    
+    margin: auto;
+}
+div#navigation div.link { 
+    display: inline-block;
+    padding: 0px 10px;
+    width: 110px;
+    height: 100%;
+    vertical-align: top;
+    background-color: #f50085;
+    font-size: 12px;
+}
+.flex {
+    width: 100%;
+    height: 100%;
+    display: flex; /* contexte sur le parent */
+    flex-direction: column; /* direction d'affichage verticale */
+    justify-content: center; /* alignement vertical */
+}
+div#navigation div.link:hover {
+    background-color: #F7339D;
+    cursor: pointer;
+}
+div#navigation div.link:active {
+    background-color: #f50085;
+}
+div#navigation div.link.play {
+    background-color: #22cc22;
+    font-size: 20px;
+}
+div#navigation div.link.play:hover {
+    background-color: #4ED64E;
+}
+div#navigation div.link.play:active {
+    background-color: #22cc22;
+}
+
+div#logo {
+    width: 1000px;
+    /*background: rgba(0, 0, 0, 0.1);*/
+    padding-top: 12px;
+    padding-bottom: 8px;
+    margin: auto;
+}
+
+input[type=text], input[type=password] {
+    margin: 1px;
+    border-radius: 2px;
+    padding: 3px 6px;
+    border-radius: 3px;
+    border: 1px solid gray;
+}
+input.button_small {
+    border-radius: 5px;
+    background-color: #f50085;
+    color: #FFFFFF;
+    border: 0;
+    padding: 3px 6px;
+}
+input.button2, button.button2 {
+    border-radius: 5px;
+    background-color: white;
+    color: #f50085;
+    border: 1px solid #f50085;
+    padding: 4px 12px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, .2);
+}
+.cadre {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+}
+.cadreContentContent {
+    padding: 2px;
+}
+.cadreInner {
+    padding: 2px;
+}
+.cadreContent {
+    background-color: white; 
+    padding: 1px;
+}
+.cadreHeader {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 100%;
+    height: 15px;
+}
+.cadreHeaderText {
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 15px;
+    color: white;
+    margin-left: 5px;
+}
+.cadreHeaderCenterText {
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 15px;
+    color: white;
+    text-align: center;
+}
+table.news {
+    border-collapse: collapse;
+}
+table.news tr td {
+    padding: 5px 0px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+table.news tr:first-child td {
+    padding-top: 2px;
+    border-top: 0;
+}
+table.news tr:last-child td {
+    padding-bottom: 4px;
+    border-bottom: 0;
+}
+#chat {
+    display: block;
+    width: 950px;
+    height: 560px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    background-color: white;
+    margin: auto;
+	border-radius: 8px;
+    margin-top: 6px;
+}
+a { text-decoration: none; color: inherit; }
+a.link { color: blue; }
+
+#camera {
+    display: block;
+    width: 950px;
+    height: 425px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    background-color: white;
+    margin: auto;
+    margin-top: 6px;
+}
+a { text-decoration: none; color: inherit; }
+a.link { color: blue; }
+
+div.message {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    font-size: 12px;
+    background-color: #55FF55;
+    text-align: center;
+}
+div.negatif {
+    background-color: #FF5555;
+}
+div.message_erreur {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    font-size: 12px;
+    background-color: #FF5555;
+    text-align: center;
+}
+div.message_info {
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	width: 100%
+	font-size: 15px;
+	background-color: #F2F3F3;
+}
+
+hr {
+    margin: 5px;
+    height: 1px;
+    border: 0px;
+    size: 1px;
+    color: #999999;
+    background-color: #999999;
+}
+
+.btn_buy {
+    width: 268px;
+    height: 68px;
+    background-image: url("/assets/img/shop/btn_buy.png"); 
+    border: 0px solid black !important;
+    background-color: rgba(0, 0, 0, 0) !important;
+    cursor: pointer;
+}
+.btn_buy {
+    width: 268px;
+    height: 68px;
+    background-image: url("/assets/img/shop/btn_buy.png"); 
+    border: 0px solid black !important;
+    float: right;
+    margin-top: 10px;
+}
+.btn_buy:hover {
+    background-position: 0px 68px;
+    cursor: pointer;
+}
+
+
+table.liste {
+    border-collapse: collapse;
+}
+table.liste td {
+    padding: 5px;
+}
+table.liste tr:nth-child(even) {
+    background-color: #FFFFFF;
+}
+table.liste tr:nth-child(odd) {
+    background-color: #F4F4F4;
+}
+
+table.border {
+    border-collapse: collapse;
+}
+table.border tr {
+    border: 1px solid gray;
+}
