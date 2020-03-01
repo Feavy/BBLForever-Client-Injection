@@ -1,4 +1,4 @@
 <params>
     <scriptAdr value="/scripts/" />
-    <socket port="12301"  />
+    <socket port="12301" />
 </params>

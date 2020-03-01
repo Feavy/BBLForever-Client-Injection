@@ -26,6 +26,7 @@ public class BlablalandConnexionHandler extends Thread {
                 System.out.println("Data received !");
                 System.out.println(Arrays.toString(data));
                 handle(new String(data, 0, len));
+                handleBinary(data, len);
                 if(data[len-1] == 0) {
                     break;
                 }
@@ -45,5 +46,25 @@ public class BlablalandConnexionHandler extends Thread {
             System.out.println("Sended crossdomain.xml");
             outputStream.close();
         }
+    }
+
+    private void handleBinary(byte[] data, int length) throws IOException {
+        if(data[0] == 1 && data[1] == 3) {
+            System.out.println("Finding token...");
+            BinaryData binaryData = new BinaryData(byteArrayToIntArray(data, length), 0, length);
+            binaryData.bitReadUnsignedInt(5);
+            binaryData.bitReadUnsignedInt(5);
+            String token = binaryData.bitReadString().substring(3, 19);
+            System.out.println("token = "+token);
+            System.out.println(token.length());
+            Main.getHttpServer().setupBlablalandClient(token);
+        }
+    }
+
+    private static int[] byteArrayToIntArray(byte[] data, int length) {
+        int[] newData = new int[length];
+        for(int i = 0; i < length; i++)
+            newData[i] = data[i];
+        return newData;
     }
 }
