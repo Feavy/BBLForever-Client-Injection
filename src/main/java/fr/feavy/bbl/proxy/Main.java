@@ -32,7 +32,9 @@ public class Main {
 
         InetAddress inetAddress = InetAddress.getLocalHost();
         String localIP = inetAddress.getHostAddress();
-        Process exec = Runtime.getRuntime().exec("route ADD 51.75.125.199 MASK 255.255.255.255 " + localIP);
+        Process exec = Runtime.getRuntime().exec("netsh int ip add address \"Wi-Fi\" 51.75.125.199");
+        // Wi-fi ou Ethernet
+        // Necessite pas de DHCP --> config auto ?
         String response = new String(new InputStreamToByteArray(exec.getInputStream()).data());
         if(!response.contains("OK")) {
             System.err.println("Erreur : veuillez exécuter le programme en mode Aministrateur.");
