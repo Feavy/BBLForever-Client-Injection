@@ -4,6 +4,7 @@ import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpContext;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpServer;
+import fr.feavy.bbl.ui.MainApplication;
 
 import java.io.*;
 import java.net.InetSocketAddress;
@@ -71,7 +72,7 @@ public class HTTPServer {
                 response = new String(new InputStreamToByteArray(exec.getErrorStream()).data());
                 System.out.println(response);
                 System.out.println("Adress deleted");
-                this.httpsClient = new HTTPSClient(Main.BASE);
+                this.httpsClient = new HTTPSClient(MainApplication.BASE);
                 return;
             }
 
@@ -116,6 +117,9 @@ public class HTTPServer {
     private static List<String> mapLocal = new ArrayList<>();
     static {
         mapLocal.add("keepalive.php");
+        mapLocal.add("SmileyPack.swf");
+        //mapLocal.add("external.swf");
+        mapLocal.add("getBBL.php");
     }
 
     private static boolean isLocalMap(String path) {

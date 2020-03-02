@@ -1,4 +1,6 @@
 package fr.feavy.bbl.proxy;
 
-public class ProxyWindow {
+import javax.swing.*;
+
+public class ProxyWindow extends JFrame {
 }

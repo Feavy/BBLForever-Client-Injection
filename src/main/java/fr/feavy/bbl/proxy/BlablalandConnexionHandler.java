@@ -1,5 +1,7 @@
 package fr.feavy.bbl.proxy;
 
+import fr.feavy.bbl.ui.MainApplication;
+
 import java.io.*;
 import java.net.Socket;
 import java.util.Arrays;
@@ -57,7 +59,7 @@ public class BlablalandConnexionHandler extends Thread {
             String token = binaryData.bitReadString().substring(3, 19);
             System.out.println("token = "+token);
             System.out.println(token.length());
-            Main.getHttpServer().setupBlablalandClient(token);
+            MainApplication.getHttpServer().setupBlablalandClient(token);
         }
     }
 
